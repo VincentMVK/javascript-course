@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>COOCKES</title>
+    <link rel="stylesheet" href="02-function.css" />
+  </head>
+  <body>
+    <div class="counter-box">
+      <span id="counter" class="counter">0</span>
+      <span id="duplicateCounter" class="duplicate">0</span>
+    </div>
+
+    <div id="box" class="box" onclick="boxClick()"></div>
+
+    <button onclick="clickBox1000Times()">1000x</button>
+
+    <script>
+      let clicked = 0;
+      let previousColor = null;
+      let duplicateCount = 0;
+
+      function boxClick() {
+        clicked++;
+        document.getElementById("counter").innerText = clicked;
+
+        if (clicked % 2 === 0) {
+          const currentColor = colorChange();
+
+          if (currentColor == previousColor) {
+            duplicateCount++;
+            document.getElementById("duplicateCounter").innerText =
+              duplicateCount;
+          }
+          previousColor = currentColor;
+        }
+      }
+
+      function colorChange() {
+        const box = document.querySelector(".box");
+        const randomColor =
+          "#" + Math.floor(Math.random() * 16777215).toString(16);
+        box.style.backgroundColor = randomColor;
+
+        return randomColor;
+      }
+
+      function clickBox1000Times() {
+        for (let i = 0; i < 1000; i++) {
+          boxClick();
+        }
+      }
+    </script>
+  </body>
+</html>

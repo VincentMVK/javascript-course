@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>:D</title>
+    <style>
+      .fortune {
+        border: solid 1px black;
+        height: 25px;
+      }
+      button {
+        margin: 50px;
+      }
+
+      p {
+        padding: 0;
+        margin: 0;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="fortune">
+      <p id="fortune"></p>
+    </div>
+    <button onclick="myFortune()">Call your Fortune</button>
+    <script>
+      const fortunes = [
+        "You will be rich",
+        "You will be happy",
+        "You will be content",
+      ];
+      const blessings = [
+        "you will have children",
+        "you will have wives",
+        "you will have success",
+      ];
+      const prosperitys = [
+        "you will have death",
+        "you will have love forever",
+        "you will have certainties",
+      ];
+
+      function myFortune() {
+        const randomFortune =
+          fortunes[Math.floor(Math.random() * fortunes.length)];
+        const randomBlessing =
+          blessings[Math.floor(Math.random() * blessings.length)];
+        const randomProsperity =
+          prosperitys[Math.floor(Math.random() * prosperitys.length)];
+
+        const message = `${randomFortune}, ${randomBlessing}, and ${randomProsperity}`;
+
+        document.getElementById("fortune").innerText = message;
+      }
+    </script>
+  </body>
+</html>

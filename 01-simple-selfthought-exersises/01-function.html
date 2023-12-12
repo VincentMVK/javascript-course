@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>function</title>
+  </head>
+  <body>
+    <button
+      onclick="
+      hock('hit')
+      "
+    >
+      hit
+    </button>
+    <button
+      onclick="
+    hock('miss')"
+    >
+      miss
+    </button>
+    <script>
+      function hock(change) {
+        if (change === "hit") {
+          hit++;
+        } else if (change === "miss") {
+          miss++;
+        }
+        console.log("Hit count", hit);
+        console.log("Miss count", miss);
+      }
+
+      let hit = 0;
+      let miss = 0;
+    </script>
+  </body>
+</html>

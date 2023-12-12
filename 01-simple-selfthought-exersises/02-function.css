@@ -1,0 +1,24 @@
+.box{
+  background-color: blueviolet;
+  color: blueviolet;
+  height: 250px;
+  width: 250px;
+  margin: 0 auto;
+  position: absolute;
+  top: 150px;
+  left: 400px;
+}
+.counter-box{
+  margin: auto;
+  position: absolute;
+  margin-left: 500px;
+  margin-top: 100px;
+}
+.counter{
+  border: 5px blueviolet solid;
+}
+.duplicate{
+  border: 5px red solid;
+  margin-left: 25px;
+}
+
